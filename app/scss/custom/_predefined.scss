@@ -1,0 +1,20 @@
+/*Blocks*/
+
+.dblock{
+	display: block;
+}
+.dflex{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+/*Required*/
+span.required{
+	color: $bg-primary;
+	font-weight: 700;
+}
+
+
