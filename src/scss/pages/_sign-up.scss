@@ -1,0 +1,12 @@
+.signup-page {
+  min-height: 100vh;
+  justify-content: center;
+
+  .signup-form-container {
+    form.form-signup {
+      label {
+        text-align: left;
+      }
+    }
+  }
+}
