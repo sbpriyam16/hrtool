@@ -1,6 +1,6 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync').create(),
-	reload = browserSync.reload;
+  reload = browserSync.reload;
 var sass        = require('gulp-sass');
 var del = require('del');
 var $ = require('gulp-load-plugins')({ lazy: true }),
