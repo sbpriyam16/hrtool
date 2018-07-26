@@ -67,7 +67,7 @@ gulp.task('serve', function() {
 // });
 
 gulp.task('sass',  function() {
-  return gulp.src("src/scss/styles.scss")
+  return gulp.src("./src/scss/styles.scss")
     // .pipe($.sourcemaps.init())
     .pipe($.plumber())
     .pipe($.sass())
@@ -104,7 +104,7 @@ gulp.task('watch', function() {
   // html changes
   gulp.watch(html.watch, ['html', reload]);
   // CSS changes
-  gulp.watch([source + 'src/scss/**/*.scss'], ['sass']);
+  gulp.watch(['./src/scss/**/*.scss'], ['sass']);
   // image changes
   gulp.watch(images.in, ['images']);
 
