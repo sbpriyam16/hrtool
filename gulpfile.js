@@ -104,7 +104,10 @@ gulp.task('watch', function() {
   // html changes
   gulp.watch(html.watch, ['html', reload]);
   // CSS changes
-  gulp.watch(['./src/scss/**/*.scss'], ['sass']);
+  // gulp.watch(['./src/scss/**/*.scss'], ['sass']);
+  $.watch(['./src/scss/**/*.scss'], $.batch(function (events, done) {
+    gulp.start(['sass'], done);
+  }));
   // image changes
   gulp.watch(images.in, ['images']);
 
