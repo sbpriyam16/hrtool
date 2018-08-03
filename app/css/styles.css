@@ -13,6 +13,7 @@
     text-align: left; }
 
 /*Core*/
+/*--------------------------------------*/
 /*Blocks*/
 .dblock {
   display: block; }
@@ -184,6 +185,8 @@ ul ul a {
 
 .equinox .calendar-actions {
   float: left; }
+  .equinox .calendar-actions .prev, .equinox .calendar-actions .next, .equinox .calendar-actions .today {
+    margin-right: 5px; }
 
 .equinox .month-label {
   text-align: right;
@@ -259,7 +262,7 @@ ul ul a {
     border-left: 1px solid #efefef;
     border-top: 1px solid #efefef; }
     .equinox .days-container .day.sunday, .equinox .days-container .day.saturday {
-      background: #CFD8DC; }
+      background: #EEE; }
 
 .equinox .week-header {
   font-size: 10px;
@@ -275,7 +278,7 @@ ul ul a {
   color: #d7d7d7; }
 
 .equinox .date.current-date {
-  background-color: #e7f6fc;
+  background-color: #EDE7F6;
   position: relative; }
   .equinox .date.current-date:before {
     content: '';
@@ -288,11 +291,12 @@ ul ul a {
     border: 1px solid #ceeef9;
     z-index: 1; }
   .equinox .date.current-date .date-label {
-    color: #0aa8e3; }
+    color: #888;
+    font-weight: 600; }
 
 .equinox .date-label {
   text-align: right;
-  font-size: 12px;
+  font-size: 14px;
   color: #888; }
 
 .equinox .date-events {
@@ -321,17 +325,34 @@ ul ul a {
 .equinox .event {
   display: block;
   box-sizing: border-box;
-  min-height: 28px;
+  min-height: 32px;
   background-color: #fff;
   padding: 7px 6px;
   font-size: 12px;
   line-height: 14px;
   border-radius: 3px;
   box-shadow: 0 1px 1px fade(#efefef, 80%);
-  border-left: 3px solid #ffaa3c;
+  border-left: 3px solid #59287a;
   color: #666;
   position: relative;
   z-index: 2; }
+  .equinox .event.leave-approved {
+    background: #8C9EFF; }
+  .equinox .event.leave-requested {
+    background: #FFD54F; }
+  .equinox .event.sick-leave {
+    background: #00E676; }
+  .equinox .event.emergency-leave {
+    background: #FFCCBC; }
+  .equinox .event.work-from-home {
+    background: #00BFA5; }
+  .equinox .event.training {
+    background: #80D8FF; }
+  .equinox .event.first-half {
+    width: 50%; }
+  .equinox .event.second-half {
+    width: 50%;
+    float: right; }
   .equinox .event .start-time {
     display: none;
     float: right;
@@ -339,8 +360,11 @@ ul ul a {
     margin-left: 4px; }
   .equinox .event .title {
     display: block;
-    overflow-x: hidden;
-    text-overflow: ellipsis; }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    line-height: 2;
+    color: #59287a; }
 
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
@@ -1937,7 +1961,7 @@ textarea.form-control {
     .form-inline .custom-control-label {
       margin-bottom: 0; } }
 
-.btn {
+.btn, .equinox .calendar-actions .prev, .equinox .calendar-actions .next, .equinox .calendar-actions .today {
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -1951,20 +1975,26 @@ textarea.form-control {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
   @media screen and (prefers-reduced-motion: reduce) {
-    .btn {
+    .btn, .equinox .calendar-actions .prev, .equinox .calendar-actions .next, .equinox .calendar-actions .today {
       transition: none; } }
-  .btn:hover, .btn:focus {
+  .btn:hover, .equinox .calendar-actions .prev:hover, .equinox .calendar-actions .next:hover, .equinox .calendar-actions .today:hover, .btn:focus, .equinox .calendar-actions .prev:focus, .equinox .calendar-actions .next:focus, .equinox .calendar-actions .today:focus {
     text-decoration: none; }
-  .btn:focus, .btn.focus {
+  .btn:focus, .equinox .calendar-actions .prev:focus, .equinox .calendar-actions .next:focus, .equinox .calendar-actions .today:focus, .btn.focus, .equinox .calendar-actions .focus.prev, .equinox .calendar-actions .focus.next, .equinox .calendar-actions .focus.today {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(89, 40, 122, 0.25); }
-  .btn.disabled, .btn:disabled {
+  .btn.disabled, .equinox .calendar-actions .disabled.prev, .equinox .calendar-actions .disabled.next, .equinox .calendar-actions .disabled.today, .btn:disabled, .equinox .calendar-actions .prev:disabled, .equinox .calendar-actions .next:disabled, .equinox .calendar-actions .today:disabled {
     opacity: 0.65; }
-  .btn:not(:disabled):not(.disabled) {
+  .btn:not(:disabled):not(.disabled), .equinox .calendar-actions .prev:not(:disabled):not(.disabled), .equinox .calendar-actions .next:not(:disabled):not(.disabled), .equinox .calendar-actions .today:not(:disabled):not(.disabled) {
     cursor: pointer; }
 
-a.btn.disabled,
-fieldset:disabled a.btn {
+a.btn.disabled, .equinox .calendar-actions a.disabled.prev, .equinox .calendar-actions a.disabled.next, .equinox .calendar-actions a.disabled.today,
+fieldset:disabled a.btn,
+fieldset:disabled .equinox .calendar-actions a.prev,
+.equinox .calendar-actions fieldset:disabled a.prev,
+fieldset:disabled .equinox .calendar-actions a.next,
+.equinox .calendar-actions fieldset:disabled a.next,
+fieldset:disabled .equinox .calendar-actions a.today,
+.equinox .calendar-actions fieldset:disabled a.today {
   pointer-events: none; }
 
 .btn-primary {
@@ -2289,27 +2319,33 @@ fieldset:disabled a.btn {
     .show > .btn-outline-danger.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.2rem rgba(251, 65, 67, 0.5); }
 
-.btn-outline-light {
+.btn-outline-light, .equinox .calendar-actions .prev, .equinox .calendar-actions .next, .equinox .calendar-actions .today {
   color: #f6f9fc;
   background-color: transparent;
   background-image: none;
   border-color: #f6f9fc; }
-  .btn-outline-light:hover {
+  .btn-outline-light:hover, .equinox .calendar-actions .prev:hover, .equinox .calendar-actions .next:hover, .equinox .calendar-actions .today:hover {
     color: #212529;
     background-color: #f6f9fc;
     border-color: #f6f9fc; }
-  .btn-outline-light:focus, .btn-outline-light.focus {
+  .btn-outline-light:focus, .equinox .calendar-actions .prev:focus, .equinox .calendar-actions .next:focus, .equinox .calendar-actions .today:focus, .btn-outline-light.focus, .equinox .calendar-actions .focus.prev, .equinox .calendar-actions .focus.next, .equinox .calendar-actions .focus.today {
     box-shadow: 0 0 0 0.2rem rgba(246, 249, 252, 0.5); }
-  .btn-outline-light.disabled, .btn-outline-light:disabled {
+  .btn-outline-light.disabled, .equinox .calendar-actions .disabled.prev, .equinox .calendar-actions .disabled.next, .equinox .calendar-actions .disabled.today, .btn-outline-light:disabled, .equinox .calendar-actions .prev:disabled, .equinox .calendar-actions .next:disabled, .equinox .calendar-actions .today:disabled {
     color: #f6f9fc;
     background-color: transparent; }
-  .btn-outline-light:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active,
-  .show > .btn-outline-light.dropdown-toggle {
+  .btn-outline-light:not(:disabled):not(.disabled):active, .equinox .calendar-actions .prev:not(:disabled):not(.disabled):active, .equinox .calendar-actions .next:not(:disabled):not(.disabled):active, .equinox .calendar-actions .today:not(:disabled):not(.disabled):active, .btn-outline-light:not(:disabled):not(.disabled).active, .equinox .calendar-actions .prev:not(:disabled):not(.disabled).active, .equinox .calendar-actions .next:not(:disabled):not(.disabled).active, .equinox .calendar-actions .today:not(:disabled):not(.disabled).active,
+  .show > .btn-outline-light.dropdown-toggle,
+  .equinox .calendar-actions .show > .dropdown-toggle.prev,
+  .equinox .calendar-actions .show > .dropdown-toggle.next,
+  .equinox .calendar-actions .show > .dropdown-toggle.today {
     color: #212529;
     background-color: #f6f9fc;
     border-color: #f6f9fc; }
-    .btn-outline-light:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus,
-    .show > .btn-outline-light.dropdown-toggle:focus {
+    .btn-outline-light:not(:disabled):not(.disabled):active:focus, .equinox .calendar-actions .prev:not(:disabled):not(.disabled):active:focus, .equinox .calendar-actions .next:not(:disabled):not(.disabled):active:focus, .equinox .calendar-actions .today:not(:disabled):not(.disabled):active:focus, .btn-outline-light:not(:disabled):not(.disabled).active:focus, .equinox .calendar-actions .prev:not(:disabled):not(.disabled).active:focus, .equinox .calendar-actions .next:not(:disabled):not(.disabled).active:focus, .equinox .calendar-actions .today:not(:disabled):not(.disabled).active:focus,
+    .show > .btn-outline-light.dropdown-toggle:focus,
+    .equinox .calendar-actions .show > .dropdown-toggle.prev:focus,
+    .equinox .calendar-actions .show > .dropdown-toggle.next:focus,
+    .equinox .calendar-actions .show > .dropdown-toggle.today:focus {
       box-shadow: 0 0 0 0.2rem rgba(246, 249, 252, 0.5); }
 
 .btn-outline-dark {
@@ -2352,13 +2388,13 @@ fieldset:disabled a.btn {
     color: #6c757d;
     pointer-events: none; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .equinox .calendar-actions .btn-group-lg > .prev, .equinox .calendar-actions .btn-group-lg > .next, .equinox .calendar-actions .btn-group-lg > .today {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .equinox .calendar-actions .btn-group-sm > .prev, .equinox .calendar-actions .btn-group-sm > .next, .equinox .calendar-actions .btn-group-sm > .today {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -2574,25 +2610,94 @@ input[type="button"].btn-block {
   position: relative;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, .equinox .calendar-actions .btn-group > .prev, .equinox .calendar-actions .btn-group > .next, .equinox .calendar-actions .btn-group > .today,
+  .btn-group-vertical > .btn,
+  .equinox .calendar-actions .btn-group-vertical > .prev,
+  .equinox .calendar-actions .btn-group-vertical > .next,
+  .equinox .calendar-actions .btn-group-vertical > .today {
     position: relative;
     flex: 0 1 auto; }
-    .btn-group > .btn:hover,
-    .btn-group-vertical > .btn:hover {
+    .btn-group > .btn:hover, .equinox .calendar-actions .btn-group > .prev:hover, .equinox .calendar-actions .btn-group > .next:hover, .equinox .calendar-actions .btn-group > .today:hover,
+    .btn-group-vertical > .btn:hover,
+    .equinox .calendar-actions .btn-group-vertical > .prev:hover,
+    .equinox .calendar-actions .btn-group-vertical > .next:hover,
+    .equinox .calendar-actions .btn-group-vertical > .today:hover {
       z-index: 1; }
-    .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+    .btn-group > .btn:focus, .equinox .calendar-actions .btn-group > .prev:focus, .equinox .calendar-actions .btn-group > .next:focus, .equinox .calendar-actions .btn-group > .today:focus, .btn-group > .btn:active, .equinox .calendar-actions .btn-group > .prev:active, .equinox .calendar-actions .btn-group > .next:active, .equinox .calendar-actions .btn-group > .today:active, .btn-group > .btn.active, .equinox .calendar-actions .btn-group > .active.prev, .equinox .calendar-actions .btn-group > .active.next, .equinox .calendar-actions .btn-group > .active.today,
     .btn-group-vertical > .btn:focus,
+    .equinox .calendar-actions .btn-group-vertical > .prev:focus,
+    .equinox .calendar-actions .btn-group-vertical > .next:focus,
+    .equinox .calendar-actions .btn-group-vertical > .today:focus,
     .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+    .equinox .calendar-actions .btn-group-vertical > .prev:active,
+    .equinox .calendar-actions .btn-group-vertical > .next:active,
+    .equinox .calendar-actions .btn-group-vertical > .today:active,
+    .btn-group-vertical > .btn.active,
+    .equinox .calendar-actions .btn-group-vertical > .active.prev,
+    .equinox .calendar-actions .btn-group-vertical > .active.next,
+    .equinox .calendar-actions .btn-group-vertical > .active.today {
       z-index: 1; }
-  .btn-group .btn + .btn,
+  .btn-group .btn + .btn, .btn-group .equinox .calendar-actions .prev + .btn, .equinox .calendar-actions .btn-group .prev + .btn, .btn-group .equinox .calendar-actions .next + .btn, .equinox .calendar-actions .btn-group .next + .btn, .btn-group .equinox .calendar-actions .today + .btn, .equinox .calendar-actions .btn-group .today + .btn, .btn-group .equinox .calendar-actions .btn + .prev, .equinox .calendar-actions .btn-group .btn + .prev, .btn-group .equinox .calendar-actions .prev + .prev, .equinox .calendar-actions .btn-group .prev + .prev, .btn-group .equinox .calendar-actions .next + .prev, .equinox .calendar-actions .btn-group .next + .prev, .btn-group .equinox .calendar-actions .today + .prev, .equinox .calendar-actions .btn-group .today + .prev, .btn-group .equinox .calendar-actions .btn + .next, .equinox .calendar-actions .btn-group .btn + .next, .btn-group .equinox .calendar-actions .prev + .next, .equinox .calendar-actions .btn-group .prev + .next, .btn-group .equinox .calendar-actions .next + .next, .equinox .calendar-actions .btn-group .next + .next, .btn-group .equinox .calendar-actions .today + .next, .equinox .calendar-actions .btn-group .today + .next, .btn-group .equinox .calendar-actions .btn + .today, .equinox .calendar-actions .btn-group .btn + .today, .btn-group .equinox .calendar-actions .prev + .today, .equinox .calendar-actions .btn-group .prev + .today, .btn-group .equinox .calendar-actions .next + .today, .equinox .calendar-actions .btn-group .next + .today, .btn-group .equinox .calendar-actions .today + .today, .equinox .calendar-actions .btn-group .today + .today,
   .btn-group .btn + .btn-group,
+  .btn-group .equinox .calendar-actions .prev + .btn-group,
+  .equinox .calendar-actions .btn-group .prev + .btn-group,
+  .btn-group .equinox .calendar-actions .next + .btn-group,
+  .equinox .calendar-actions .btn-group .next + .btn-group,
+  .btn-group .equinox .calendar-actions .today + .btn-group,
+  .equinox .calendar-actions .btn-group .today + .btn-group,
   .btn-group .btn-group + .btn,
+  .btn-group .equinox .calendar-actions .btn-group + .prev,
+  .equinox .calendar-actions .btn-group .btn-group + .prev,
+  .btn-group .equinox .calendar-actions .btn-group + .next,
+  .equinox .calendar-actions .btn-group .btn-group + .next,
+  .btn-group .equinox .calendar-actions .btn-group + .today,
+  .equinox .calendar-actions .btn-group .btn-group + .today,
   .btn-group .btn-group + .btn-group,
   .btn-group-vertical .btn + .btn,
+  .btn-group-vertical .equinox .calendar-actions .prev + .btn,
+  .equinox .calendar-actions .btn-group-vertical .prev + .btn,
+  .btn-group-vertical .equinox .calendar-actions .next + .btn,
+  .equinox .calendar-actions .btn-group-vertical .next + .btn,
+  .btn-group-vertical .equinox .calendar-actions .today + .btn,
+  .equinox .calendar-actions .btn-group-vertical .today + .btn,
+  .btn-group-vertical .equinox .calendar-actions .btn + .prev,
+  .equinox .calendar-actions .btn-group-vertical .btn + .prev,
+  .btn-group-vertical .equinox .calendar-actions .prev + .prev,
+  .equinox .calendar-actions .btn-group-vertical .prev + .prev,
+  .btn-group-vertical .equinox .calendar-actions .next + .prev,
+  .equinox .calendar-actions .btn-group-vertical .next + .prev,
+  .btn-group-vertical .equinox .calendar-actions .today + .prev,
+  .equinox .calendar-actions .btn-group-vertical .today + .prev,
+  .btn-group-vertical .equinox .calendar-actions .btn + .next,
+  .equinox .calendar-actions .btn-group-vertical .btn + .next,
+  .btn-group-vertical .equinox .calendar-actions .prev + .next,
+  .equinox .calendar-actions .btn-group-vertical .prev + .next,
+  .btn-group-vertical .equinox .calendar-actions .next + .next,
+  .equinox .calendar-actions .btn-group-vertical .next + .next,
+  .btn-group-vertical .equinox .calendar-actions .today + .next,
+  .equinox .calendar-actions .btn-group-vertical .today + .next,
+  .btn-group-vertical .equinox .calendar-actions .btn + .today,
+  .equinox .calendar-actions .btn-group-vertical .btn + .today,
+  .btn-group-vertical .equinox .calendar-actions .prev + .today,
+  .equinox .calendar-actions .btn-group-vertical .prev + .today,
+  .btn-group-vertical .equinox .calendar-actions .next + .today,
+  .equinox .calendar-actions .btn-group-vertical .next + .today,
+  .btn-group-vertical .equinox .calendar-actions .today + .today,
+  .equinox .calendar-actions .btn-group-vertical .today + .today,
   .btn-group-vertical .btn + .btn-group,
+  .btn-group-vertical .equinox .calendar-actions .prev + .btn-group,
+  .equinox .calendar-actions .btn-group-vertical .prev + .btn-group,
+  .btn-group-vertical .equinox .calendar-actions .next + .btn-group,
+  .equinox .calendar-actions .btn-group-vertical .next + .btn-group,
+  .btn-group-vertical .equinox .calendar-actions .today + .btn-group,
+  .equinox .calendar-actions .btn-group-vertical .today + .btn-group,
   .btn-group-vertical .btn-group + .btn,
+  .btn-group-vertical .equinox .calendar-actions .btn-group + .prev,
+  .equinox .calendar-actions .btn-group-vertical .btn-group + .prev,
+  .btn-group-vertical .equinox .calendar-actions .btn-group + .next,
+  .equinox .calendar-actions .btn-group-vertical .btn-group + .next,
+  .btn-group-vertical .equinox .calendar-actions .btn-group + .today,
+  .equinox .calendar-actions .btn-group-vertical .btn-group + .today,
   .btn-group-vertical .btn-group + .btn-group {
     margin-left: -1px; }
 
@@ -2603,16 +2708,22 @@ input[type="button"].btn-block {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, .equinox .calendar-actions .btn-group > .prev:first-child, .equinox .calendar-actions .btn-group > .next:first-child, .equinox .calendar-actions .btn-group > .today:first-child {
   margin-left: 0; }
 
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group > .btn-group:not(:last-child) > .btn {
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .equinox .calendar-actions .btn-group > .prev:not(:last-child):not(.dropdown-toggle), .equinox .calendar-actions .btn-group > .next:not(:last-child):not(.dropdown-toggle), .equinox .calendar-actions .btn-group > .today:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn-group:not(:last-child) > .btn,
+.equinox .calendar-actions .btn-group > .btn-group:not(:last-child) > .prev,
+.equinox .calendar-actions .btn-group > .btn-group:not(:last-child) > .next,
+.equinox .calendar-actions .btn-group > .btn-group:not(:last-child) > .today {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn:not(:first-child),
-.btn-group > .btn-group:not(:first-child) > .btn {
+.btn-group > .btn:not(:first-child), .equinox .calendar-actions .btn-group > .prev:not(:first-child), .equinox .calendar-actions .btn-group > .next:not(:first-child), .equinox .calendar-actions .btn-group > .today:not(:first-child),
+.btn-group > .btn-group:not(:first-child) > .btn,
+.equinox .calendar-actions .btn-group > .btn-group:not(:first-child) > .prev,
+.equinox .calendar-actions .btn-group > .btn-group:not(:first-child) > .next,
+.equinox .calendar-actions .btn-group > .btn-group:not(:first-child) > .today {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2626,11 +2737,11 @@ input[type="button"].btn-block {
   .dropleft .dropdown-toggle-split::before {
     margin-right: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .equinox .calendar-actions .btn-group-sm > .prev + .dropdown-toggle-split, .equinox .calendar-actions .btn-group-sm > .next + .dropdown-toggle-split, .equinox .calendar-actions .btn-group-sm > .today + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .equinox .calendar-actions .btn-group-lg > .prev + .dropdown-toggle-split, .equinox .calendar-actions .btn-group-lg > .next + .dropdown-toggle-split, .equinox .calendar-actions .btn-group-lg > .today + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2638,31 +2749,55 @@ input[type="button"].btn-block {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  .btn-group-vertical .btn,
+  .btn-group-vertical .btn, .btn-group-vertical .equinox .calendar-actions .prev, .equinox .calendar-actions .btn-group-vertical .prev, .btn-group-vertical .equinox .calendar-actions .next, .equinox .calendar-actions .btn-group-vertical .next, .btn-group-vertical .equinox .calendar-actions .today, .equinox .calendar-actions .btn-group-vertical .today,
   .btn-group-vertical .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn + .btn,
+  .btn-group-vertical > .btn + .btn, .equinox .calendar-actions .btn-group-vertical > .prev + .btn, .equinox .calendar-actions .btn-group-vertical > .next + .btn, .equinox .calendar-actions .btn-group-vertical > .today + .btn, .equinox .calendar-actions .btn-group-vertical > .btn + .prev, .equinox .calendar-actions .btn-group-vertical > .prev + .prev, .equinox .calendar-actions .btn-group-vertical > .next + .prev, .equinox .calendar-actions .btn-group-vertical > .today + .prev, .equinox .calendar-actions .btn-group-vertical > .btn + .next, .equinox .calendar-actions .btn-group-vertical > .prev + .next, .equinox .calendar-actions .btn-group-vertical > .next + .next, .equinox .calendar-actions .btn-group-vertical > .today + .next, .equinox .calendar-actions .btn-group-vertical > .btn + .today, .equinox .calendar-actions .btn-group-vertical > .prev + .today, .equinox .calendar-actions .btn-group-vertical > .next + .today, .equinox .calendar-actions .btn-group-vertical > .today + .today,
   .btn-group-vertical > .btn + .btn-group,
+  .equinox .calendar-actions .btn-group-vertical > .prev + .btn-group,
+  .equinox .calendar-actions .btn-group-vertical > .next + .btn-group,
+  .equinox .calendar-actions .btn-group-vertical > .today + .btn-group,
   .btn-group-vertical > .btn-group + .btn,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group + .prev,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group + .next,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group + .today,
   .btn-group-vertical > .btn-group + .btn-group {
     margin-top: -1px;
     margin-left: 0; }
-  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-  .btn-group-vertical > .btn-group:not(:last-child) > .btn {
+  .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .equinox .calendar-actions .btn-group-vertical > .prev:not(:last-child):not(.dropdown-toggle), .equinox .calendar-actions .btn-group-vertical > .next:not(:last-child):not(.dropdown-toggle), .equinox .calendar-actions .btn-group-vertical > .today:not(:last-child):not(.dropdown-toggle),
+  .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group:not(:last-child) > .prev,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group:not(:last-child) > .next,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group:not(:last-child) > .today {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0; }
-  .btn-group-vertical > .btn:not(:first-child),
-  .btn-group-vertical > .btn-group:not(:first-child) > .btn {
+  .btn-group-vertical > .btn:not(:first-child), .equinox .calendar-actions .btn-group-vertical > .prev:not(:first-child), .equinox .calendar-actions .btn-group-vertical > .next:not(:first-child), .equinox .calendar-actions .btn-group-vertical > .today:not(:first-child),
+  .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group:not(:first-child) > .prev,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group:not(:first-child) > .next,
+  .equinox .calendar-actions .btn-group-vertical > .btn-group:not(:first-child) > .today {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
-.btn-group-toggle > .btn,
-.btn-group-toggle > .btn-group > .btn {
+.btn-group-toggle > .btn, .equinox .calendar-actions .btn-group-toggle > .prev, .equinox .calendar-actions .btn-group-toggle > .next, .equinox .calendar-actions .btn-group-toggle > .today,
+.btn-group-toggle > .btn-group > .btn,
+.equinox .calendar-actions .btn-group-toggle > .btn-group > .prev,
+.equinox .calendar-actions .btn-group-toggle > .btn-group > .next,
+.equinox .calendar-actions .btn-group-toggle > .btn-group > .today {
   margin-bottom: 0; }
-  .btn-group-toggle > .btn input[type="radio"],
+  .btn-group-toggle > .btn input[type="radio"], .equinox .calendar-actions .btn-group-toggle > .prev input[type="radio"], .equinox .calendar-actions .btn-group-toggle > .next input[type="radio"], .equinox .calendar-actions .btn-group-toggle > .today input[type="radio"],
   .btn-group-toggle > .btn input[type="checkbox"],
+  .equinox .calendar-actions .btn-group-toggle > .prev input[type="checkbox"],
+  .equinox .calendar-actions .btn-group-toggle > .next input[type="checkbox"],
+  .equinox .calendar-actions .btn-group-toggle > .today input[type="checkbox"],
   .btn-group-toggle > .btn-group > .btn input[type="radio"],
-  .btn-group-toggle > .btn-group > .btn input[type="checkbox"] {
+  .equinox .calendar-actions .btn-group-toggle > .btn-group > .prev input[type="radio"],
+  .equinox .calendar-actions .btn-group-toggle > .btn-group > .next input[type="radio"],
+  .equinox .calendar-actions .btn-group-toggle > .btn-group > .today input[type="radio"],
+  .btn-group-toggle > .btn-group > .btn input[type="checkbox"],
+  .equinox .calendar-actions .btn-group-toggle > .btn-group > .prev input[type="checkbox"],
+  .equinox .calendar-actions .btn-group-toggle > .btn-group > .next input[type="checkbox"],
+  .equinox .calendar-actions .btn-group-toggle > .btn-group > .today input[type="checkbox"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none; }
@@ -2718,18 +2853,78 @@ input[type="button"].btn-block {
 .input-group-prepend,
 .input-group-append {
   display: flex; }
-  .input-group-prepend .btn,
-  .input-group-append .btn {
+  .input-group-prepend .btn, .input-group-prepend .equinox .calendar-actions .prev, .equinox .calendar-actions .input-group-prepend .prev, .input-group-prepend .equinox .calendar-actions .next, .equinox .calendar-actions .input-group-prepend .next, .input-group-prepend .equinox .calendar-actions .today, .equinox .calendar-actions .input-group-prepend .today,
+  .input-group-append .btn,
+  .input-group-append .equinox .calendar-actions .prev,
+  .equinox .calendar-actions .input-group-append .prev,
+  .input-group-append .equinox .calendar-actions .next,
+  .equinox .calendar-actions .input-group-append .next,
+  .input-group-append .equinox .calendar-actions .today,
+  .equinox .calendar-actions .input-group-append .today {
     position: relative;
     z-index: 2; }
-  .input-group-prepend .btn + .btn,
+  .input-group-prepend .btn + .btn, .input-group-prepend .equinox .calendar-actions .prev + .btn, .equinox .calendar-actions .input-group-prepend .prev + .btn, .input-group-prepend .equinox .calendar-actions .next + .btn, .equinox .calendar-actions .input-group-prepend .next + .btn, .input-group-prepend .equinox .calendar-actions .today + .btn, .equinox .calendar-actions .input-group-prepend .today + .btn, .input-group-prepend .equinox .calendar-actions .btn + .prev, .equinox .calendar-actions .input-group-prepend .btn + .prev, .input-group-prepend .equinox .calendar-actions .prev + .prev, .equinox .calendar-actions .input-group-prepend .prev + .prev, .input-group-prepend .equinox .calendar-actions .next + .prev, .equinox .calendar-actions .input-group-prepend .next + .prev, .input-group-prepend .equinox .calendar-actions .today + .prev, .equinox .calendar-actions .input-group-prepend .today + .prev, .input-group-prepend .equinox .calendar-actions .btn + .next, .equinox .calendar-actions .input-group-prepend .btn + .next, .input-group-prepend .equinox .calendar-actions .prev + .next, .equinox .calendar-actions .input-group-prepend .prev + .next, .input-group-prepend .equinox .calendar-actions .next + .next, .equinox .calendar-actions .input-group-prepend .next + .next, .input-group-prepend .equinox .calendar-actions .today + .next, .equinox .calendar-actions .input-group-prepend .today + .next, .input-group-prepend .equinox .calendar-actions .btn + .today, .equinox .calendar-actions .input-group-prepend .btn + .today, .input-group-prepend .equinox .calendar-actions .prev + .today, .equinox .calendar-actions .input-group-prepend .prev + .today, .input-group-prepend .equinox .calendar-actions .next + .today, .equinox .calendar-actions .input-group-prepend .next + .today, .input-group-prepend .equinox .calendar-actions .today + .today, .equinox .calendar-actions .input-group-prepend .today + .today,
   .input-group-prepend .btn + .input-group-text,
+  .input-group-prepend .equinox .calendar-actions .prev + .input-group-text,
+  .equinox .calendar-actions .input-group-prepend .prev + .input-group-text,
+  .input-group-prepend .equinox .calendar-actions .next + .input-group-text,
+  .equinox .calendar-actions .input-group-prepend .next + .input-group-text,
+  .input-group-prepend .equinox .calendar-actions .today + .input-group-text,
+  .equinox .calendar-actions .input-group-prepend .today + .input-group-text,
   .input-group-prepend .input-group-text + .input-group-text,
   .input-group-prepend .input-group-text + .btn,
+  .input-group-prepend .equinox .calendar-actions .input-group-text + .prev,
+  .equinox .calendar-actions .input-group-prepend .input-group-text + .prev,
+  .input-group-prepend .equinox .calendar-actions .input-group-text + .next,
+  .equinox .calendar-actions .input-group-prepend .input-group-text + .next,
+  .input-group-prepend .equinox .calendar-actions .input-group-text + .today,
+  .equinox .calendar-actions .input-group-prepend .input-group-text + .today,
   .input-group-append .btn + .btn,
+  .input-group-append .equinox .calendar-actions .prev + .btn,
+  .equinox .calendar-actions .input-group-append .prev + .btn,
+  .input-group-append .equinox .calendar-actions .next + .btn,
+  .equinox .calendar-actions .input-group-append .next + .btn,
+  .input-group-append .equinox .calendar-actions .today + .btn,
+  .equinox .calendar-actions .input-group-append .today + .btn,
+  .input-group-append .equinox .calendar-actions .btn + .prev,
+  .equinox .calendar-actions .input-group-append .btn + .prev,
+  .input-group-append .equinox .calendar-actions .prev + .prev,
+  .equinox .calendar-actions .input-group-append .prev + .prev,
+  .input-group-append .equinox .calendar-actions .next + .prev,
+  .equinox .calendar-actions .input-group-append .next + .prev,
+  .input-group-append .equinox .calendar-actions .today + .prev,
+  .equinox .calendar-actions .input-group-append .today + .prev,
+  .input-group-append .equinox .calendar-actions .btn + .next,
+  .equinox .calendar-actions .input-group-append .btn + .next,
+  .input-group-append .equinox .calendar-actions .prev + .next,
+  .equinox .calendar-actions .input-group-append .prev + .next,
+  .input-group-append .equinox .calendar-actions .next + .next,
+  .equinox .calendar-actions .input-group-append .next + .next,
+  .input-group-append .equinox .calendar-actions .today + .next,
+  .equinox .calendar-actions .input-group-append .today + .next,
+  .input-group-append .equinox .calendar-actions .btn + .today,
+  .equinox .calendar-actions .input-group-append .btn + .today,
+  .input-group-append .equinox .calendar-actions .prev + .today,
+  .equinox .calendar-actions .input-group-append .prev + .today,
+  .input-group-append .equinox .calendar-actions .next + .today,
+  .equinox .calendar-actions .input-group-append .next + .today,
+  .input-group-append .equinox .calendar-actions .today + .today,
+  .equinox .calendar-actions .input-group-append .today + .today,
   .input-group-append .btn + .input-group-text,
+  .input-group-append .equinox .calendar-actions .prev + .input-group-text,
+  .equinox .calendar-actions .input-group-append .prev + .input-group-text,
+  .input-group-append .equinox .calendar-actions .next + .input-group-text,
+  .equinox .calendar-actions .input-group-append .next + .input-group-text,
+  .input-group-append .equinox .calendar-actions .today + .input-group-text,
+  .equinox .calendar-actions .input-group-append .today + .input-group-text,
   .input-group-append .input-group-text + .input-group-text,
-  .input-group-append .input-group-text + .btn {
+  .input-group-append .input-group-text + .btn,
+  .input-group-append .equinox .calendar-actions .input-group-text + .prev,
+  .equinox .calendar-actions .input-group-append .input-group-text + .prev,
+  .input-group-append .equinox .calendar-actions .input-group-text + .next,
+  .equinox .calendar-actions .input-group-append .input-group-text + .next,
+  .input-group-append .equinox .calendar-actions .input-group-text + .today,
+  .equinox .calendar-actions .input-group-append .input-group-text + .today {
     margin-left: -1px; }
 
 .input-group-prepend {
@@ -2760,7 +2955,13 @@ input[type="button"].btn-block {
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
-.input-group-lg > .input-group-append > .btn {
+.equinox .calendar-actions .input-group-lg > .input-group-prepend > .prev,
+.equinox .calendar-actions .input-group-lg > .input-group-prepend > .next,
+.equinox .calendar-actions .input-group-lg > .input-group-prepend > .today,
+.input-group-lg > .input-group-append > .btn,
+.equinox .calendar-actions .input-group-lg > .input-group-append > .prev,
+.equinox .calendar-actions .input-group-lg > .input-group-append > .next,
+.equinox .calendar-actions .input-group-lg > .input-group-append > .today {
   height: calc(2.875rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
@@ -2771,27 +2972,45 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
-.input-group-sm > .input-group-append > .btn {
+.equinox .calendar-actions .input-group-sm > .input-group-prepend > .prev,
+.equinox .calendar-actions .input-group-sm > .input-group-prepend > .next,
+.equinox .calendar-actions .input-group-sm > .input-group-prepend > .today,
+.input-group-sm > .input-group-append > .btn,
+.equinox .calendar-actions .input-group-sm > .input-group-append > .prev,
+.equinox .calendar-actions .input-group-sm > .input-group-append > .next,
+.equinox .calendar-actions .input-group-sm > .input-group-append > .today {
   height: calc(1.8125rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
   border-radius: 0.2rem; }
 
-.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .btn, .equinox .calendar-actions .input-group > .input-group-prepend > .prev, .equinox .calendar-actions .input-group > .input-group-prepend > .next, .equinox .calendar-actions .input-group > .input-group-prepend > .today,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
+.equinox .calendar-actions .input-group > .input-group-append:not(:last-child) > .prev,
+.equinox .calendar-actions .input-group > .input-group-append:not(:last-child) > .next,
+.equinox .calendar-actions .input-group > .input-group-append:not(:last-child) > .today,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.equinox .calendar-actions .input-group > .input-group-append:last-child > .prev:not(:last-child):not(.dropdown-toggle),
+.equinox .calendar-actions .input-group > .input-group-append:last-child > .next:not(:last-child):not(.dropdown-toggle),
+.equinox .calendar-actions .input-group > .input-group-append:last-child > .today:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .btn, .equinox .calendar-actions .input-group > .input-group-append > .prev, .equinox .calendar-actions .input-group > .input-group-append > .next, .equinox .calendar-actions .input-group > .input-group-append > .today,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
+.equinox .calendar-actions .input-group > .input-group-prepend:not(:first-child) > .prev,
+.equinox .calendar-actions .input-group > .input-group-prepend:not(:first-child) > .next,
+.equinox .calendar-actions .input-group > .input-group-prepend:not(:first-child) > .today,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.equinox .calendar-actions .input-group > .input-group-prepend:first-child > .prev:not(:first-child),
+.equinox .calendar-actions .input-group > .input-group-prepend:first-child > .next:not(:first-child),
+.equinox .calendar-actions .input-group > .input-group-prepend:first-child > .today:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -3700,7 +3919,7 @@ input[type="button"].btn-block {
   .badge:empty {
     display: none; }
 
-.btn .badge {
+.btn .badge, .equinox .calendar-actions .prev .badge, .equinox .calendar-actions .next .badge, .equinox .calendar-actions .today .badge {
   position: relative;
   top: -1px; }
 

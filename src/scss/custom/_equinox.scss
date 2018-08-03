@@ -18,6 +18,14 @@
 
   .calendar-actions {
     float: left;
+
+    .prev, .next, .today {
+      @extend .btn;
+
+      @extend .btn-outline-light;
+
+      margin-right: 5px;
+    }
   }
 
   .month-label {
@@ -128,7 +136,7 @@
       border-top: 1px solid #efefef;
 
       &.sunday, &.saturday {
-        background: #CFD8DC;
+        background: $holiday;
       }
     }
   }
@@ -152,7 +160,7 @@
     }
 
     &.current-date {
-      background-color: #e7f6fc;
+      background-color: $current-day;
       position: relative;
 
       &:before {
@@ -168,14 +176,15 @@
       }
 
       .date-label {
-        color: #0aa8e3;
+        color: #888;
+        font-weight: 600;
       }
     }
   }
 
   .date-label {
     text-align: right;
-    font-size: 12px;
+    font-size: 14px;
     color: #888;
   }
 
@@ -211,17 +220,50 @@
   .event {
     display: block;
     box-sizing: border-box;
-    min-height: 28px;
+    min-height: 32px;
     background-color: #fff;
     padding: 7px 6px;
     font-size: 12px;
     line-height: 14px;
     border-radius: 3px;
     box-shadow: 0 1px 1px fade(#efefef, 80%);
-    border-left: 3px solid #ffaa3c;
+    border-left: 3px solid $primary;
     color: #666;
     position: relative;
     z-index: 2;
+
+    &.leave-approved {
+      background: $leave-approved;
+    }
+
+    &.leave-requested {
+      background: $leave-requested;
+    }
+
+    &.sick-leave {
+      background: $sick-leave;
+    }
+
+    &.emergency-leave {
+      background: $emergency-leave;
+    }
+
+    &.work-from-home {
+      background: $work-from-home;
+    }
+
+    &.training {
+      background: $training;
+    }
+
+    &.first-half {
+      width: 50%;
+    }
+
+    &.second-half {
+      width: 50%;
+      float: right;
+    }
 
     .start-time {
       display: none;
@@ -232,8 +274,11 @@
 
     .title {
       display: block;
-      overflow-x: hidden;
+      overflow: hidden;
       text-overflow: ellipsis;
+      font-size: 14px;
+      line-height: 2;
+      color: $primary;
     }
   }
 }
