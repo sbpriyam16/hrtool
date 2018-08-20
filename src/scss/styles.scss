@@ -1,10 +1,11 @@
-/*Pages*/
-@import 'pages/sign-in';
-@import 'pages/sign-up';
-
 /*Core*/
 @import 'custom/variables';
 @import 'custom/predefined';
 @import 'custom/sidebar';
 @import 'custom/equinox';
 @import 'bootstrap/bootstrap';
+
+/*Pages*/
+@import 'pages/sign-in';
+@import 'pages/sign-up';
+@import 'pages/employee-profile';

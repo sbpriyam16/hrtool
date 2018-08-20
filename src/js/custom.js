@@ -5,6 +5,10 @@ $('#sidebarCollapse').on('click', function () {
     $(this).toggleClass('active');
 });
 
+$('[data-toggle="tooltip"]').tooltip(); 
+
+$('[data-toggle="popover"]').popover(); 
+
 
 // Calendar events
 $('.event-calendar').equinox({

@@ -1,0 +1,96 @@
+<!-- Header -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HR Tool</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 employee-dashboard-page">
+				<div class="row">
+					<div class="wrapper">
+				        <!-- Sidebar Holder -->
+				        <nav id="sidebar">
+				            <div class="sidebar-header d-flex justify-content-center">
+				            	<img class="mr-3" src="images/sb-logo.png" alt="" width="63" height="63">
+				            </div>
+				        
+				            <ul class="list-unstyled components">
+				            	<li class="active"><a href="javascript:;">Dashboard</a></li>
+				            	<li class="active"><a href="javascript:;">Profile</a></li>
+				                <li>
+				                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Link</a>
+				                    <ul class="collapse list-unstyled" id="homeSubmenu">
+				                        <li>
+				                            <a href="#">Link 1</a>
+				                        </li>
+				                        <li>
+				                            <a href="#">Link 2</a>
+				                        </li>
+				                        <li>
+				                            <a href="#">Link 3</a>
+				                        </li>
+				                    </ul>
+				                </li>
+				                <li>
+				                    <a href="#">Link</a>
+				                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+				                    <ul class="collapse list-unstyled" id="pageSubmenu">
+				                        <li>
+				                            <a href="#">Link 1</a>
+				                        </li>
+				                        <li>
+				                            <a href="#">Link 2</a>
+				                        </li>
+				                        <li>
+				                            <a href="#">Link 3</a>
+				                        </li>
+				                    </ul>
+				                </li>
+				                <li>
+				                    <a href="#">Link</a>
+				                </li>
+				                <li>
+				                    <a href="#">Link</a>
+				                </li>
+				            </ul>
+				        </nav>
+				        <!-- Page Content Holder -->
+				        <div id="content">
+				        	<div class="row">
+					            <nav class="navbar navbar-expand-lg col-1">
+				                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+				                        <span></span>
+				                        <span></span>
+				                        <span></span>
+				                    </button>
+					            </nav>
+					            <div class="col-2">
+					            	<a href="javascript:;">Logout</a>
+					            </div>	
+				            </div>
+				            <div class="row">
+				            	<div class="col-12">
+				            		<div class="event-calendar"></div>
+				            	</div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- scripts -->
+    <!-- scripts -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/equinox.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>

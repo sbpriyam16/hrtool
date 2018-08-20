@@ -1,17 +1,3 @@
-/*Pages*/
-.signin-page {
-  height: 100vh;
-  align-items: center;
-  justify-content: center; }
-  .signin-page .signin-form-container form.signin label {
-    text-align: left; }
-
-.signup-page {
-  min-height: 100vh;
-  justify-content: center; }
-  .signup-page .signup-form-container form.form-signup label {
-    text-align: left; }
-
 /*Core*/
 /*--------------------------------------*/
 /*Blocks*/
@@ -3618,7 +3604,7 @@ input[type="button"].btn-block {
     .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
       color: #fff; }
 
-.card {
+.card, .employee-profile-page .info-list {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -3628,13 +3614,13 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem; }
-  .card > hr {
+  .card > hr, .employee-profile-page .info-list > hr {
     margin-right: 0;
     margin-left: 0; }
-  .card > .list-group:first-child .list-group-item:first-child {
+  .card > .list-group:first-child .list-group-item:first-child, .employee-profile-page .info-list > .list-group:first-child .list-group-item:first-child {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem; }
-  .card > .list-group:last-child .list-group-item:last-child {
+  .card > .list-group:last-child .list-group-item:last-child, .employee-profile-page .info-list > .list-group:last-child .list-group-item:last-child {
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem; }
 
@@ -3710,14 +3696,14 @@ input[type="button"].btn-block {
 .card-deck {
   display: flex;
   flex-direction: column; }
-  .card-deck .card {
+  .card-deck .card, .card-deck .employee-profile-page .info-list, .employee-profile-page .card-deck .info-list {
     margin-bottom: 15px; }
   @media (min-width: 576px) {
     .card-deck {
       flex-flow: row wrap;
       margin-right: -15px;
       margin-left: -15px; }
-      .card-deck .card {
+      .card-deck .card, .card-deck .employee-profile-page .info-list, .employee-profile-page .card-deck .info-list {
         display: flex;
         flex: 1 0 0%;
         flex-direction: column;
@@ -3728,54 +3714,63 @@ input[type="button"].btn-block {
 .card-group {
   display: flex;
   flex-direction: column; }
-  .card-group > .card {
+  .card-group > .card, .employee-profile-page .card-group > .info-list {
     margin-bottom: 15px; }
   @media (min-width: 576px) {
     .card-group {
       flex-flow: row wrap; }
-      .card-group > .card {
+      .card-group > .card, .employee-profile-page .card-group > .info-list {
         flex: 1 0 0%;
         margin-bottom: 0; }
-        .card-group > .card + .card {
+        .card-group > .card + .card, .employee-profile-page .card-group > .info-list + .card, .employee-profile-page .card-group > .card + .info-list, .employee-profile-page .card-group > .info-list + .info-list {
           margin-left: 0;
           border-left: 0; }
-        .card-group > .card:first-child {
+        .card-group > .card:first-child, .employee-profile-page .card-group > .info-list:first-child {
           border-top-right-radius: 0;
           border-bottom-right-radius: 0; }
-          .card-group > .card:first-child .card-img-top,
-          .card-group > .card:first-child .card-header {
+          .card-group > .card:first-child .card-img-top, .employee-profile-page .card-group > .info-list:first-child .card-img-top,
+          .card-group > .card:first-child .card-header,
+          .employee-profile-page .card-group > .info-list:first-child .card-header {
             border-top-right-radius: 0; }
-          .card-group > .card:first-child .card-img-bottom,
-          .card-group > .card:first-child .card-footer {
+          .card-group > .card:first-child .card-img-bottom, .employee-profile-page .card-group > .info-list:first-child .card-img-bottom,
+          .card-group > .card:first-child .card-footer,
+          .employee-profile-page .card-group > .info-list:first-child .card-footer {
             border-bottom-right-radius: 0; }
-        .card-group > .card:last-child {
+        .card-group > .card:last-child, .employee-profile-page .card-group > .info-list:last-child {
           border-top-left-radius: 0;
           border-bottom-left-radius: 0; }
-          .card-group > .card:last-child .card-img-top,
-          .card-group > .card:last-child .card-header {
+          .card-group > .card:last-child .card-img-top, .employee-profile-page .card-group > .info-list:last-child .card-img-top,
+          .card-group > .card:last-child .card-header,
+          .employee-profile-page .card-group > .info-list:last-child .card-header {
             border-top-left-radius: 0; }
-          .card-group > .card:last-child .card-img-bottom,
-          .card-group > .card:last-child .card-footer {
+          .card-group > .card:last-child .card-img-bottom, .employee-profile-page .card-group > .info-list:last-child .card-img-bottom,
+          .card-group > .card:last-child .card-footer,
+          .employee-profile-page .card-group > .info-list:last-child .card-footer {
             border-bottom-left-radius: 0; }
-        .card-group > .card:only-child {
+        .card-group > .card:only-child, .employee-profile-page .card-group > .info-list:only-child {
           border-radius: 0.25rem; }
-          .card-group > .card:only-child .card-img-top,
-          .card-group > .card:only-child .card-header {
+          .card-group > .card:only-child .card-img-top, .employee-profile-page .card-group > .info-list:only-child .card-img-top,
+          .card-group > .card:only-child .card-header,
+          .employee-profile-page .card-group > .info-list:only-child .card-header {
             border-top-left-radius: 0.25rem;
             border-top-right-radius: 0.25rem; }
-          .card-group > .card:only-child .card-img-bottom,
-          .card-group > .card:only-child .card-footer {
+          .card-group > .card:only-child .card-img-bottom, .employee-profile-page .card-group > .info-list:only-child .card-img-bottom,
+          .card-group > .card:only-child .card-footer,
+          .employee-profile-page .card-group > .info-list:only-child .card-footer {
             border-bottom-right-radius: 0.25rem;
             border-bottom-left-radius: 0.25rem; }
-        .card-group > .card:not(:first-child):not(:last-child):not(:only-child) {
+        .card-group > .card:not(:first-child):not(:last-child):not(:only-child), .employee-profile-page .card-group > .info-list:not(:first-child):not(:last-child):not(:only-child) {
           border-radius: 0; }
-          .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top,
+          .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top, .employee-profile-page .card-group > .info-list:not(:first-child):not(:last-child):not(:only-child) .card-img-top,
           .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
+          .employee-profile-page .card-group > .info-list:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
           .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-header,
-          .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-footer {
+          .employee-profile-page .card-group > .info-list:not(:first-child):not(:last-child):not(:only-child) .card-header,
+          .card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-footer,
+          .employee-profile-page .card-group > .info-list:not(:first-child):not(:last-child):not(:only-child) .card-footer {
             border-radius: 0; } }
 
-.card-columns .card {
+.card-columns .card, .card-columns .employee-profile-page .info-list, .employee-profile-page .card-columns .info-list {
   margin-bottom: 0.75rem; }
 
 @media (min-width: 576px) {
@@ -3784,23 +3779,23 @@ input[type="button"].btn-block {
     column-gap: 1.25rem;
     orphans: 1;
     widows: 1; }
-    .card-columns .card {
+    .card-columns .card, .card-columns .employee-profile-page .info-list, .employee-profile-page .card-columns .info-list {
       display: inline-block;
       width: 100%; } }
 
-.accordion .card:not(:first-of-type):not(:last-of-type) {
+.accordion .card:not(:first-of-type):not(:last-of-type), .accordion .employee-profile-page .info-list:not(:first-of-type):not(:last-of-type), .employee-profile-page .accordion .info-list:not(:first-of-type):not(:last-of-type) {
   border-bottom: 0;
   border-radius: 0; }
 
-.accordion .card:not(:first-of-type) .card-header:first-child {
+.accordion .card:not(:first-of-type) .card-header:first-child, .accordion .employee-profile-page .info-list:not(:first-of-type) .card-header:first-child, .employee-profile-page .accordion .info-list:not(:first-of-type) .card-header:first-child {
   border-radius: 0; }
 
-.accordion .card:first-of-type {
+.accordion .card:first-of-type, .accordion .employee-profile-page .info-list:first-of-type, .employee-profile-page .accordion .info-list:first-of-type {
   border-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.accordion .card:last-of-type {
+.accordion .card:last-of-type, .accordion .employee-profile-page .info-list:last-of-type, .employee-profile-page .accordion .info-list:last-of-type {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
@@ -6874,3 +6869,41 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+
+/*Pages*/
+.signin-page {
+  height: 100vh;
+  align-items: center;
+  justify-content: center; }
+  .signin-page .signin-form-container form.signin label {
+    text-align: left; }
+
+.signup-page {
+  min-height: 100vh;
+  justify-content: center; }
+  .signup-page .signup-form-container form.form-signup label {
+    text-align: left; }
+
+.employee-profile-page .info-list {
+  padding: 15px; }
+  .employee-profile-page .info-list legend {
+    font-size: 18px;
+    display: inline;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #00c9a7;
+    color: #ffffff; }
+  .employee-profile-page .info-list a.edit-profile {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    z-index: 9; }
+  .employee-profile-page .info-list ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+    .employee-profile-page .info-list ul li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+      margin-bottom: 10px;
+      padding-bottom: 5px; }

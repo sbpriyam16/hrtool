@@ -1,0 +1,36 @@
+.employee-profile-page {
+  .info-list {
+    @extend .card;
+
+    padding: 15px;
+
+    legend {
+      font-size: 18px;
+      display: inline;
+      width: auto;
+      padding-left: 10px;
+      padding-right: 10px;
+      background: $bg-secondary;
+      color: $bg-white;
+    }
+
+    a.edit-profile {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      z-index: 9;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+
+      li {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}

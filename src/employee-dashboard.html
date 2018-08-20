@@ -3,71 +3,285 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12 employee-dashboard-page">
+			<div class="col-12 employee-dashboard-page">
 				<div class="row">
 					<div class="wrapper">
 				        <!-- Sidebar Holder -->
-				        <nav id="sidebar">
-				            <div class="sidebar-header d-flex">
-				            	<img class="mr-3" src="images/sb-logo.svg" alt="" width="52" height="63">
-				                <h3>SpotBrush</h3>
-				            </div>
-
-				            <ul class="list-unstyled components">
-				                <li class="active">
-				                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Link</a>
-				                    <ul class="collapse list-unstyled" id="homeSubmenu">
-				                        <li>
-				                            <a href="#">Link 1</a>
-				                        </li>
-				                        <li>
-				                            <a href="#">Link 2</a>
-				                        </li>
-				                        <li>
-				                            <a href="#">Link 3</a>
-				                        </li>
-				                    </ul>
-				                </li>
-				                <li>
-				                    <a href="#">Link</a>
-				                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-				                    <ul class="collapse list-unstyled" id="pageSubmenu">
-				                        <li>
-				                            <a href="#">Link 1</a>
-				                        </li>
-				                        <li>
-				                            <a href="#">Link 2</a>
-				                        </li>
-				                        <li>
-				                            <a href="#">Link 3</a>
-				                        </li>
-				                    </ul>
-				                </li>
-				                <li>
-				                    <a href="#">Link</a>
-				                </li>
-				                <li>
-				                    <a href="#">Link</a>
-				                </li>
-				            </ul>
-				        </nav>
-
+				        <!-- @include _partials/_sidebar.html -->
 				        <!-- Page Content Holder -->
 				        <div id="content">
 				        	<div class="row">
-					            <nav class="navbar navbar-expand-lg">
+					            <nav class="navbar navbar-expand-lg col-1">
 				                    <button type="button" id="sidebarCollapse" class="navbar-btn">
 				                        <span></span>
 				                        <span></span>
 				                        <span></span>
 				                    </button>
 					            </nav>
+					            <div class="col-2">
+					            	<a href="javascript:;">Logout</a>
+					            </div>	
 				            </div>
 				            <div class="row">
-		                    	<div class="col-md-12">
-		                    		<div class="event-calendar"></div>
-		                    	</div>
-		                    </div>
+				            	<div class="col-12">
+				            		<!-- Nav tabs -->
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="#profile">Profile</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#leaves">Leaves</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#financialDetails">Financial Details</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#performanceGoals">Performance &amp; Goals</a>
+										</li>
+									</ul>
+									<!-- Tab panes -->
+									<div class="tab-content">
+										<div id="profile" class="container tab-pane active">
+											<h4>Profile</h4>
+											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											<div class="row">
+												<div class="col-3">
+													<img class="u-box-shadow-lg img-fluid img-thumbnail" src="images/pro-pic.png" alt="Profile picture name">
+												</div>
+												<div class="col-9">
+													<fieldset class="info-list">
+														<legend>Basic Info</legend>	
+														<ul>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Title</b></div>
+																	<div class="col-9">Mr.</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Name</b></div>
+																	<div class="col-9">Priyam Chakraborty</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Employee ID</b></div>
+																	<div class="col-9">IBMIN02-020</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Status</b></div>
+																	<div class="col-9">Current</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Last Login</b></div>
+																	<div class="col-9">09 Aug 18 at 14:38</div>
+																</div>
+															</li>
+														</ul>
+													</fieldset>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<fieldset class="info-list">
+														<legend>Contait Details</legend>	
+														<ul>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Official Email</b></div>
+																	<div class="col-9">chakraborty.saha.sendas.priyam@world-domination.com</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Personal Email</b></div>
+																	<div class="col-9">chakraborty.saha.sendas.priyam@world-domination.com</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Work Extension</b></div>
+																	<div class="col-9">4567</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Work Mobile</b></div>
+																	<div class="col-9">9874563210</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Personal Mobile</b></div>
+																	<div class="col-9">9874563210</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Address</b></div>
+																	<div class="col-9">Ghanta Building,<br />Tees maar khan galli,<br />Bengaluru<br />Karnataka,<br />560001,<br />India</div>
+																</div>
+															</li>
+														</ul>
+													</fieldset>
+												</div>
+												<div class="col-md-6">
+													<fieldset class="info-list">
+														<legend>Demographics</legend>	
+														<ul>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Gender</b></div>
+																	<div class="col-9">Male</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Date of Birth</b></div>
+																	<div class="col-9">15/08/1947</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Nationality</b></div>
+																	<div class="col-9">Indian</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Ethnicity</b></div>
+																	<div class="col-9">Indian</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Marital Status</b></div>
+																	<div class="col-9">Single (BURN!)</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>PAN</b></div>
+																	<div class="col-9">ARTYP1008C</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Aadhar</b></div>
+																	<div class="col-9">1234-4567-7890</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>SSN</b></div>
+																	<div class="col-9">AAA-GG-SSSS</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Driving Lisence</b></div>
+																	<div class="col-9">-</div>
+																</div>
+															</li>
+														</ul>
+													</fieldset>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<fieldset class="info-list">
+														<legend>Job</legend>	
+														<ul>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Job Title</b></div>
+																	<div class="col-9">Developer</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Department</b></div>
+																	<div class="col-9">IT</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Location</b></div>
+																	<div class="col-9">Bangalore</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Weekly working hours</b></div>
+																	<div class="col-9">45h</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Join Date</b></div>
+																	<div class="col-9">08/05/2017</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Length of Service</b></div>
+																	<div class="col-9">1 Year 8 months</div>
+																</div>
+															</li>
+														</ul>
+													</fieldset>
+												</div>
+												<div class="col-md-6">
+													<fieldset class="info-list">
+														<legend>Approvers &amp; Managers</legend>	
+														<ul>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Line Manager</b></div>
+																	<div class="col-9">Priyam Chakraborty</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Leave Approver</b></div>
+																	<div class="col-9">HR</div>
+																</div>
+															</li>
+															<li>
+																<div class="row">
+																	<div class="col-3"><b>Expense Approver</b></div>
+																	<div class="col-9">Line Manager</div>
+																</div>
+															</li>
+														</ul>
+													</fieldset>
+												</div>
+											</div>
+										</div>
+										<div id="leaves" class="container tab-pane fade">
+											<h4>Leaves</h4>
+											<div class="row">
+						                    	<div class="col-md-12">
+						                    		<div class="event-calendar"></div>
+						                    	</div>
+						                    </div>
+										</div>
+										<div id="financialDetails" class="container tab-pane fade">
+											<h4>Financial Details</h4>
+											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+										</div>
+										<div id="performanceGoals" class="container tab-pane fade">
+											<h4>Performance &amp; Goals</h4>
+											<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+										</div>
+									</div>
+				            	</div>
+				            </div>
 				        </div>
 				    </div>
 				</div>
